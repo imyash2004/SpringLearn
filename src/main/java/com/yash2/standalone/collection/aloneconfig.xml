@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+    ">
+				<!-- Stand alone  -->
+	<util:list list-class="java.util.Vector" id="bestie">
+		<value>Yash</value>
+		<value>Anurag</value>
+		<value>Raghav</value>
+		<value>Jannu</value>
+		<value>hathi</value>
+	
+	
+	
+	</util:list>
+	
+	
+	
+	
+	
+	<util:map map-class="java.util.TreeMap" id="fees">
+	
+	<entry key="java core" value="2000"/>
+	<entry key="jdbc" value="3000"/>
+	<entry key="hybernate" value ="1000"/>
+	<entry key="spring" value="900000"/>
+	
+	</util:map>
+	
+	
+	<util:properties id="dbms">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">yash</prop>
+		<prop key="pswd">sarika</prop>
+		<prop key="url">mysql:jdbc://localhost:3306/datbase</prop>
+		
+		
+		
+	
+	</util:properties>
+	<!-- this is our beans -->
+	<bean class="com.yash2.standalone.collection.Person"
+		name="person1">
+		<property name="friends" ref="bestie"/>
+		<property name="feestructure" ref="fees"/>
+		<property name="prop" ref="dbms"/>
+<!-- 		<property name="friends"> -->
+<!-- 		<ref bean="bestie"/> -->
+<!-- 		</property> -->
+
+
+
+
+	</bean>
+
+</beans>
